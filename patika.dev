@@ -1,0 +1,29 @@
+actor VotingDapp {
+
+  // Değişkenler
+  var votesForYes: Int = 0;
+  var votesForNo: Int = 0;
+
+  // Evet için oy ver
+  public func voteYes() : async Int {
+    votesForYes += 1;
+    votesForYes;
+  };
+
+  // Hayır için oy ver
+  public func voteNo() : async Int {
+    votesForNo += 1;
+    votesForNo;
+  };
+
+  // Toplam oy sayısını döndür
+  public func getResults() : async (Int, Int) {
+    (votesForYes, votesForNo);
+  };
+
+  // Oyları sıfırla
+  public func resetVotes() : async () {
+    votesForYes := 0;
+    votesForNo := 0;
+  };
+};
